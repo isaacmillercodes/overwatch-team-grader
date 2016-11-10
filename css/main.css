@@ -3,6 +3,8 @@
 
 body {
   font-family: "Overwatch", sans-serif;
+  background-image: url('../assets/images/overwatchbackground.png');
+  background-size: cover;
 }
 
 p {
@@ -25,4 +27,11 @@ p {
 
 .bottom-row {
   margin-left: 6%;
+}
+
+.role-icon {
+  height: 16px;
+  width: 16px;
+  background-color: #5f4e68;
+  margin-left: 2px;
 }
