@@ -10,11 +10,11 @@
 
   function HeroService($http) {
     /*jshint validthis: true */
-    const heroUrl = 'https://overwatch-hero-api.herokuapp.com/api/v1/heroes';
+    const heroUrl = 'https://overwatch-hero-api.herokuapp.com/api/v1/';
     // const heroUrl = 'http://localhost:8080/api/v1/heroes';
 
-    this.getAll = () => {
-      return $http.get(heroUrl);
+    this.getAll = (resource) => {
+      return $http.get(`${heroUrl}${resource}`);
     };
 
     // this.getSingle = (resource, id) => {

@@ -11,9 +11,24 @@
   <body ng-cloak ng-controller="heroController as heroCtrl">
     <!-- sample angular code -->
 
-    <div class="container">
-      <div ng-repeat="hero in heroCtrl.heroes">
-        <p>{{hero.name}}</p>
+    <div class="container col-xs-12">
+      <div class="row col-xs-12">
+        <div ng-repeat="hero in heroCtrl.offenseHeroes" class="col-xs-1">
+          <img ng-src={{hero.image}} class="hero-image">
+          <p>{{hero.name}}</p>
+        </div>
+        <div ng-repeat="hero in heroCtrl.defenseHeroes" class="col-xs-1">
+          <img ng-src={{hero.image}} class="hero-image">
+          <p>{{hero.name}}</p>
+        </div>
+        <div ng-repeat="hero in heroCtrl.tankHeroes" class="col-xs-1">
+          <img ng-src={{hero.image}} class="hero-image">
+          <p>{{hero.name}}</p>
+        </div>
+        <div ng-repeat="hero in heroCtrl.supportHeroes" class="col-xs-1">
+          <img ng-src={{hero.image}} class="hero-image">
+          <p>{{hero.name}}</p>
+        </div>
       </div>
     </div>
     <!-- scripts -->

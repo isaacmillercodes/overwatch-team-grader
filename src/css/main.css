@@ -2,3 +2,7 @@
 [ng-cloak] {
   display: none;
 }
+
+.hero-image {
+  width: 100%;
+}
