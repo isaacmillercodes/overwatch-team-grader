@@ -33,26 +33,27 @@
       </div>
     </div>
 
-    <!-- <div class="container col-xs-12">
-      <div class="row col-xs-8 col-xs-offset-2">
-        <div ng-repeat="hero in heroCtrl.offenseHeroes" class="col-xs-1">
-          <img ng-src={{hero.image}} class="hero-image">
-          <p>{{hero.name}}</p>
+    <div class="container grade-message">
+      <h2>Click on a hero above to add them to your team</h2>
+    </div>
+
+    <div class="container">
+      <div class="row col xs-12 team-row">
+        <div class="col-xs-2 team-hero">
         </div>
-        <div ng-repeat="hero in heroCtrl.defenseHeroes" class="col-xs-1">
-          <img ng-src={{hero.image}} class="hero-image">
-          <p>{{hero.name}}</p>
+        <div class="col-xs-2 team-hero">
         </div>
-        <div ng-repeat="hero in heroCtrl.tankHeroes" class="col-xs-1">
-          <img ng-src={{hero.image}} class="hero-image">
-          <p>{{hero.name}}</p>
+        <div class="col-xs-2 team-hero">
         </div>
-        <div ng-repeat="hero in heroCtrl.supportHeroes" class="col-xs-1">
-          <img ng-src={{hero.image}} class="hero-image">
-          <p>{{hero.name}}</p>
+        <div class="col-xs-2 team-hero">
+        </div>
+        <div class="col-xs-2 team-hero">
+        </div>
+        <div class="col-xs-2 team-hero">
         </div>
       </div>
-    </div> -->
+    </div>
+
     <!-- scripts -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -62,6 +63,7 @@
     <!-- hero component -->
     <script type="text/javascript" src="js/components/heroes/heroes.config.js"></script>
     <script type="text/javascript" src="js/components/heroes/heroes.service.js"></script>
+    <script type="text/javascript" src="js/components/heroes/heroes.directive.js"></script>
     <script type="text/javascript" src="js/components/heroes/heroes.controller.js"></script>
   </body>
 </html>
