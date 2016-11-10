@@ -13,19 +13,22 @@
       <div class="row col-xs-12">
         <div ng-repeat="hero in heroCtrl.topHeroes" class="col-xs-1 hero-div">
           <img ng-src={{hero.image}} class="hero-image">
-          <p>{{hero.name}}</p>
+          <p ng-if="hero.role == 'Offense'">{{hero.name}} <img ng-src="./assets/images/OffenseIcon.png" class="role-icon"></p>
+          <p ng-if="hero.role == 'Defense'">{{hero.name}} <img ng-src="./assets/images/DefenseIcon.png" class="role-icon"></p>
         </div>
       </div>
       <div class="row col-xs-12">
         <div ng-repeat="hero in heroCtrl.middleHeroes" class="col-xs-1 hero-div">
           <img ng-src={{hero.image}} class="hero-image">
-          <p>{{hero.name}}</p>
+          <p ng-if="hero.role == 'Defense'">{{hero.name}} <img ng-src="./assets/images/DefenseIcon.png" class="role-icon"></p>
+          <p ng-if="hero.role == 'Tank'">{{hero.name}} <img ng-src="./assets/images/TankIcon.png" class="role-icon"></p>
         </div>
       </div>
       <div class="row col-xs-12 bottom-row">
         <div ng-repeat="hero in heroCtrl.bottomHeroes" class="col-xs-1 hero-div">
           <img ng-src={{hero.image}} class="hero-image">
-          <p>{{hero.name}}</p>
+          <p ng-if="hero.role == 'Tank'">{{hero.name}} <img ng-src="./assets/images/TankIcon.png" class="role-icon"></p>
+          <p ng-if="hero.role == 'Support'">{{hero.name}} <img ng-src="./assets/images/SupportIcon.png" class="role-icon"></p>
         </div>
       </div>
     </div>
