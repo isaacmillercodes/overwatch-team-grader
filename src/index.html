@@ -6,13 +6,32 @@
     <!-- styles -->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel='icon' href='overwatchlogo.png' type='image/png'>
+    <link rel='icon' href='./assets/images/overwatchlogo.png' type='image/png'>
   </head>
   <body ng-cloak ng-controller="heroController as heroCtrl">
-    <!-- sample angular code -->
-
-    <div class="container col-xs-12">
+    <div class="container">
       <div class="row col-xs-12">
+        <div ng-repeat="hero in heroCtrl.topHeroes" class="col-xs-1 hero-div">
+          <img ng-src={{hero.image}} class="hero-image">
+          <p>{{hero.name}}</p>
+        </div>
+      </div>
+      <div class="row col-xs-12">
+        <div ng-repeat="hero in heroCtrl.middleHeroes" class="col-xs-1 hero-div">
+          <img ng-src={{hero.image}} class="hero-image">
+          <p>{{hero.name}}</p>
+        </div>
+      </div>
+      <div class="row col-xs-12 bottom-row">
+        <div ng-repeat="hero in heroCtrl.bottomHeroes" class="col-xs-1 hero-div">
+          <img ng-src={{hero.image}} class="hero-image">
+          <p>{{hero.name}}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="container col-xs-12">
+      <div class="row col-xs-8 col-xs-offset-2">
         <div ng-repeat="hero in heroCtrl.offenseHeroes" class="col-xs-1">
           <img ng-src={{hero.image}} class="hero-image">
           <p>{{hero.name}}</p>
@@ -30,7 +49,7 @@
           <p>{{hero.name}}</p>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- scripts -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
