@@ -1,1 +1,4 @@
 /* add custom styles */
+[ng-cloak] {
+  display: none;
+}
