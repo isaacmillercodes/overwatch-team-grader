@@ -1,8 +1,28 @@
 /* add custom styles */
+@font-face { font-family: "Overwatch"; src: url("http://us.battle.net/forums/static/fonts/bignoodletoo/bignoodletoo.woff") format('woff'); }
+
+body {
+  font-family: "Overwatch", sans-serif;
+}
+
+p {
+  font-size: 18px;
+}
+
 [ng-cloak] {
   display: none;
 }
 
 .hero-image {
-  width: 100%;
+  max-width: 100%;
+}
+
+.hero-div {
+  margin: 0 2% 0 2%;
+  padding: 0;
+  text-align: center;
+}
+
+.bottom-row {
+  margin-left: 6%;
 }
