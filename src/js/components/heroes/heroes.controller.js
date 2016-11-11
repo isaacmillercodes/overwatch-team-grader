@@ -59,7 +59,11 @@
           teamGrades[2]++;
         } else {
           if (hero.secondary !== 'Passive Damage') {
-            teamGrades[3]++;
+            // if (hero.secondary === 'Solo Healer') {
+              // teamGrades[3] = teamGrades[3] + 2;
+            // } else {
+              teamGrades[3]++;
+            // }
           } else {
             teamGrades[1]++;
           }
@@ -84,17 +88,31 @@
       console.log(teamGrades);
 
       if (teamGrades[3] === 0) {
-        this.gradeMessage = 'Heroes never die! Or, at least they don\'t when they have a healer. Try adding a healing support like Mercy or Lúcio!' ;
+        this.gradeMessage = 'Heroes never die! Or at least they don\'t when they have a healer. Try adding a healing support like Mercy or Lúcio!' ;
+        this.messageColor = '#b04a33';
+      } else if (teamGrades[2] === 0) {
+        this.gradeMessage = 'Get behind the shield of a tank like Reinhardt or D.Va to improve your team.' ;
+        this.messageColor = '#b04a33';
+      } else if (teamGrades[2] > 3 || teamGrades[3] > 3) {
+        this.gradeMessage = 'Overwatch is all about diversity. Try swapping in some offense or defense heroes!' ;
+        this.messageColor = '#b04a33';
+      } else if (teamGrades[0] > 3) {
+        this.gradeMessage = 'Firepower is great, but this might be a bit much. Add more defense, tank, or support heroes.';
         this.messageColor = '#faa02e';
-        console.log('we made it!');
+      } else if (teamGrades[1] > 3) {
+        this.gradeMessage = 'The best offense is a good defense, but you could probably use a little more offense.';
+        this.messageColor = '#faa02e';
+      } else {
+        this.gradeMessage = 'Look at this team! You\'re gonna do great.' ;
+        this.messageColor = '#74ce39';
       }
 
       this.gradedTeam = !this.gradedTeam;
 
       // this.gradeMessage = 'Wow, such team!';
       // this.messageColor = '#74ce39';
-      // this.messageColor = '#b04a33';
       // this.messageColor = '#faa02e';
+      // this.messageColor = '#b04a33';
     };
 
   }
