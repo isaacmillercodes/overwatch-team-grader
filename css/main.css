@@ -30,6 +30,10 @@ p {
   text-align: center;
 }
 
+.hero-div:hover {
+  cursor: pointer;
+}
+
 .bottom-row {
   margin-left: 6%;
 }
@@ -43,7 +47,7 @@ p {
 
 .grade-message {
   text-align: center;
-  min-height: 110px;
+  min-height: 80px;
 }
 
 [class^="team-hero-"] {
@@ -53,12 +57,16 @@ p {
   margin-left: 10px;
 }
 
+[class^="team-hero-"]:hover {
+  cursor: pointer;
+}
+
 .team-row {
   margin-left: 20%;
   margin-bottom: 5%;
 }
 
-.grade-btn, .dismiss-btn {
-  margin-top: 1%;
+.grade-btn {
+  margin-top: 2%;
   background-color: #faa02e;
 }

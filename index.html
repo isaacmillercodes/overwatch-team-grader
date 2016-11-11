@@ -26,7 +26,7 @@
     content="Add your favorite Overwatch heroes and get feedback on team composition!" />
     <meta property="og:image" content="https://isaacmillercodes.github.io/overwatch-team-grader/assets/images/owgrader-home.png" />
     <meta property="og:site_name" content="Overwatch Team Grader" />
-    
+
   </head>
   <body ng-cloak ng-controller="heroController as heroCtrl">
     <div class="container">
@@ -50,7 +50,7 @@
     <div class="container grade-message">
       <h2 ng-if="heroCtrl.selectedHeroes.length < 6">Click on heroes above to add to your team!</h2>
       <button type="button" class="btn btn-md grade-btn" ng-click="heroCtrl.gradeTeam(heroCtrl.selectedHeroes)" ng-show="heroCtrl.selectedHeroes.length == 6" ng-if="!heroCtrl.gradedTeam">Grade Team</button>
-      <button type="button" class="btn btn-md dismiss-btn" ng-click="heroCtrl.removeMessage()" ng-show="heroCtrl.selectedHeroes.length == 6" ng-if="heroCtrl.gradedTeam">Dismiss Message</button>
+      <!-- <button type="button" class="btn btn-md dismiss-btn" ng-click="heroCtrl.removeMessage()" ng-show="heroCtrl.selectedHeroes.length == 6" ng-if="heroCtrl.gradedTeam">Dismiss Message</button> -->
       <h2 ng-show="heroCtrl.selectedHeroes.length == 6" ng-if="heroCtrl.gradedTeam" style="color: {{heroCtrl.messageColor}};">{{heroCtrl.gradeMessage}}</h2>
 
     </div>
