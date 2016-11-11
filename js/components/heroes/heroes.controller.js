@@ -6,41 +6,14 @@
     .module('overwatchApp.components.heroes')
     .controller('heroController', heroController);
 
-  heroController.$inject = ['HeroService'];
+  heroController.$inject = ['HeroService', '$scope'];
 
-  function heroController(HeroService) {
+  function heroController(HeroService, $scope) {
     /*jshint validthis: true */
-    // HeroService.getAll('heroes').then(heroList => {
-    //   const offenseHeroes = [];
-    //   const defenseHeroes = [];
-    //   const tankHeroes = [];
-    //   const supportHeroes = [];
-    //   heroList.data.forEach(hero => {
-    //     switch (hero.role) {
-    //       case 'Offense':
-    //         offenseHeroes.push(hero);
-    //         break;
-    //       case 'Defense':
-    //         defenseHeroes.push(hero);
-    //         break;
-    //       case 'Tank':
-    //         tankHeroes.push(hero);
-    //         break;
-    //       case 'Support':
-    //         supportHeroes.push(hero);
-    //         break;
-    //     }
-    //   });
-    //   this.offenseHeroes = offenseHeroes;
-    //   this.defenseHeroes = defenseHeroes;
-    //   this.tankHeroes = tankHeroes;
-    //   this.supportHeroes = supportHeroes;
-    // });
-
     const topRowHeroes = [];
     const middleRowHeroes = [];
     const bottomRowHeroes = [];
-
+    this.selectedHeroes = [];
     HeroService.getAll('heroes').then(heroList => {
       heroList.data.forEach(hero => {
         if (topRowHeroes.length < 8) {
@@ -55,6 +28,20 @@
       this.middleHeroes = middleRowHeroes;
       this.bottomHeroes = bottomRowHeroes;
     });
+
+    this.selectHero = (hero) => {
+      let matchingHero = this.selectedHeroes.filter(teamHero => {
+        return hero.id === teamHero.id;
+      })[0];
+
+      if (!matchingHero) {
+        return this.selectedHeroes.push(hero);
+      } else {
+        let index = this.selectedHeroes.indexOf(matchingHero);
+        return this.selectedHeroes.splice(index, 1);
+      }
+    };
+
   }
 
 })();

@@ -4,19 +4,25 @@
 
   angular
     .module('overwatchApp.components.heroes')
-    .directive('hero', HeroDirective);
+    .directive('owHero', HeroDirective);
 
   HeroDirective.$inject = [];
 
   function HeroDirective() {
     /*jshint validthis: true */
     return {
-      restrict: 'A',
-      scope: {},
-      controller: heroController,
-      controllerAs: heroCtrl,
-      link: function (scope, element, attrs, controller, transcludeFn) {
-
+      restrict: 'E',
+      scope: {
+        hero: '='
+      },
+      controller: 'heroController',
+      // controllerAs: 'heroCtrl',
+      templateUrl: './js/components/heroes/partials/hero.view.html',
+      link: function (scope, element, attrs, heroCtrl, transcludeFn) {
+        // element.on('click', () => {
+        //   heroCtrl.selectedHeroes.push(scope.hero);
+        //   console.log(heroCtrl.selectedHeroes);
+        // });
       }
 
     };

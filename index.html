@@ -11,24 +11,18 @@
   <body ng-cloak ng-controller="heroController as heroCtrl">
     <div class="container">
       <div class="row col-xs-12">
-        <div ng-repeat="hero in heroCtrl.topHeroes" class="col-xs-1 hero-div">
-          <img ng-src={{hero.image}} class="hero-image">
-          <p ng-if="hero.role == 'Offense'">{{hero.name}} <img ng-src="./assets/images/OffenseIcon.png" class="role-icon"></p>
-          <p ng-if="hero.role == 'Defense'">{{hero.name}} <img ng-src="./assets/images/DefenseIcon.png" class="role-icon"></p>
+        <div ng-repeat="hero in heroCtrl.topHeroes" class="col-xs-1 hero-div" ng-click="heroCtrl.selectHero(hero)">
+          <ow-hero hero="hero"></ow-hero>
         </div>
       </div>
       <div class="row col-xs-12">
-        <div ng-repeat="hero in heroCtrl.middleHeroes" class="col-xs-1 hero-div">
-          <img ng-src={{hero.image}} class="hero-image">
-          <p ng-if="hero.role == 'Defense'">{{hero.name}} <img ng-src="./assets/images/DefenseIcon.png" class="role-icon"></p>
-          <p ng-if="hero.role == 'Tank'">{{hero.name}} <img ng-src="./assets/images/TankIcon.png" class="role-icon"></p>
+        <div ng-repeat="hero in heroCtrl.middleHeroes" class="col-xs-1 hero-div" ng-click="heroCtrl.selectHero(hero)">
+          <ow-hero hero="hero"></ow-hero>
         </div>
       </div>
       <div class="row col-xs-12 bottom-row">
-        <div ng-repeat="hero in heroCtrl.bottomHeroes" class="col-xs-1 hero-div">
-          <img ng-src={{hero.image}} class="hero-image">
-          <p ng-if="hero.role == 'Tank'">{{hero.name}} <img ng-src="./assets/images/TankIcon.png" class="role-icon"></p>
-          <p ng-if="hero.role == 'Support'">{{hero.name}} <img ng-src="./assets/images/SupportIcon.png" class="role-icon"></p>
+        <div ng-repeat="hero in heroCtrl.bottomHeroes" class="col-xs-1 hero-div" ng-click="heroCtrl.selectHero(hero)">
+          <ow-hero hero="hero"></ow-hero>
         </div>
       </div>
     </div>
@@ -39,24 +33,24 @@
 
     <div class="container">
       <div class="row col xs-12 team-row">
-        <div class="col-xs-2 team-hero">
+        <div class="team-hero-1 col-xs-2" style="background-image: url({{heroCtrl.selectedHeroes[0].image}}); background-size: cover">
         </div>
-        <div class="col-xs-2 team-hero">
+        <div class="team-hero-2 col-xs-2" style="background-image: url({{heroCtrl.selectedHeroes[1].image}}); background-size: cover">
         </div>
-        <div class="col-xs-2 team-hero">
+        <div class="team-hero-3 col-xs-2" style="background-image: url({{heroCtrl.selectedHeroes[2].image}}); background-size: cover">
         </div>
-        <div class="col-xs-2 team-hero">
+        <div class="team-hero-4 col-xs-2" style="background-image: url({{heroCtrl.selectedHeroes[3].image}}); background-size: cover">
         </div>
-        <div class="col-xs-2 team-hero">
+        <div class="team-hero-5 col-xs-2" style="background-image: url({{heroCtrl.selectedHeroes[4].image}}); background-size: cover">
         </div>
-        <div class="col-xs-2 team-hero">
+        <div class="team-hero-6 col-xs-2" style="background-image: url({{heroCtrl.selectedHeroes[5].image}}); background-size: cover">
         </div>
       </div>
     </div>
 
     <!-- scripts -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script> -->
+    <!-- <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/config.js"></script>
