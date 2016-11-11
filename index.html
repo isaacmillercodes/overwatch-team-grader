@@ -30,9 +30,8 @@
     <div class="container grade-message">
       <h2 ng-if="heroCtrl.selectedHeroes.length < 6">Click on heroes above to add to your team!</h2>
       <button type="button" class="btn btn-md grade-btn" ng-click="heroCtrl.gradeTeam(heroCtrl.selectedHeroes)" ng-show="heroCtrl.selectedHeroes.length == 6" ng-if="!heroCtrl.gradedTeam">Grade Team</button>
-
-      <h2 ng-show="heroCtrl.selectedHeroes.length == 6" ng-if="heroCtrl.gradedTeam" style="color: {{heroCtrl.messageColor}};">{{heroCtrl.gradeMessage}}</h2>
       <button type="button" class="btn btn-md dismiss-btn" ng-click="heroCtrl.removeMessage()" ng-show="heroCtrl.selectedHeroes.length == 6" ng-if="heroCtrl.gradedTeam">Dismiss Message</button>
+      <h2 ng-show="heroCtrl.selectedHeroes.length == 6" ng-if="heroCtrl.gradedTeam" style="color: {{heroCtrl.messageColor}};">{{heroCtrl.gradeMessage}}</h2>
 
     </div>
 
