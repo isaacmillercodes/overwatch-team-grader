@@ -28,7 +28,10 @@
     </div>
 
     <div class="container grade-message">
-      <h2>{{heroCtrl.gradeMessage}}</h2>
+      <h2 ng-if="heroCtrl.selectedHeroes.length < 6">Click on heroes above to add to your team!</h2>
+      <button type="button" class="btn btn-md grade-btn" ng-click="heroCtrl.gradeTeam(heroCtrl.selectedHeroes)" ng-show="heroCtrl.selectedHeroes.length == 6">Grade Team</button>
+      <h2 ng-show="heroCtrl.gradedTeam" ng-if="heroCtrl.selectedHeroes.length == 6" style="color: {{heroCtrl.messageColor}};">{{heroCtrl.gradeMessage}}</h2>
+      </div>
     </div>
 
     <div class="container">
