@@ -33,6 +33,8 @@
 
     this.selectHero = (hero) => {
 
+      this.gradeMessage = '';
+
       let matchingHero = this.selectedHeroes.filter(teamHero => {
         return hero.id === teamHero.id;
       })[0];
@@ -49,6 +51,9 @@
     };
 
     this.removeHero = (hero) => {
+
+      this.gradeMessage = '';
+      this.gradedTeam = false;
 
       let matchingHero = this.selectedHeroes.filter(teamHero => {
         return hero.id === teamHero.id;
