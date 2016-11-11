@@ -57,7 +57,7 @@ p {
   margin-bottom: 5%;
 }
 
-.grade-btn {
+.grade-btn, .dismiss-btn {
   margin-bottom: 1%;
   background-color: #faa02e;
 }
