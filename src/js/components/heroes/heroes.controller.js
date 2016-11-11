@@ -30,16 +30,21 @@
     });
 
     this.selectHero = (hero) => {
-      let matchingHero = this.selectedHeroes.filter(teamHero => {
-        return hero.id === teamHero.id;
-      })[0];
+      if (this.selectedHeroes.length < 6) {
 
-      if (!matchingHero) {
-        return this.selectedHeroes.push(hero);
-      } else {
-        let index = this.selectedHeroes.indexOf(matchingHero);
-        return this.selectedHeroes.splice(index, 1);
+        let matchingHero = this.selectedHeroes.filter(teamHero => {
+          return hero.id === teamHero.id;
+        })[0];
+
+        if (!matchingHero) {
+          return this.selectedHeroes.push(hero);
+        } else {
+          let index = this.selectedHeroes.indexOf(matchingHero);
+          return this.selectedHeroes.splice(index, 1);
+        }
+
       }
+
     };
 
   }
