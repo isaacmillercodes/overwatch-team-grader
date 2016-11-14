@@ -100,8 +100,6 @@
         }
       });
 
-      console.log(teamGrades);
-
       if (teamGrades[3] === 0) {
         this.gradeMessage = 'Heroes never die! Or at least they don\'t when they have a healer. Try adding a healing support like Mercy or Lúcio!' ;
         this.messageColor = '#b04a33';

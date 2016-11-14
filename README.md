@@ -1,6 +1,6 @@
 # Overwatch Team Grader
 
-Overwatch Team Grader is a tool for new and experienced Overwatch players to be able to test different team compositions and get immediate feedback. It gets data from an Overwatch Hero API I built with using Go and PostgreSQL.  
+Overwatch Team Grader is a tool for new and experienced Overwatch players to be able to test different team compositions and get immediate feedback. It gets data from an Overwatch Hero API I built using Go and PostgreSQL.  
 
 #### [Deployed site](https://isaacmillercodes.github.io/overwatch-team-grader/)
 
