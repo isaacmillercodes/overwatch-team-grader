@@ -78,7 +78,6 @@
           } else {
             teamGrades[0]++;
           }
-          teamGrades[0]++;
         } else if (hero.role === 'Defense') {
           teamGrades[1]++;
         } else if (hero.role === 'Tank') {
@@ -100,6 +99,8 @@
           }
         }
       });
+
+      console.log(teamGrades);
 
       if (teamGrades[3] === 0) {
         this.gradeMessage = 'Heroes never die! Or at least they don\'t when they have a healer. Try adding a healing support like Mercy or Lúcio!' ;
