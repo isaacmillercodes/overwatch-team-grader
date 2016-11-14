@@ -1,6 +1,10 @@
 /* add custom styles */
 @font-face { font-family: "Overwatch"; src: url("https://us.battle.net/forums/static/fonts/bignoodletoo/bignoodletoo.woff") format('woff'); }
 
+[ng-cloak] {
+  display: none;
+}
+
 body {
   font-family: "Overwatch", sans-serif;
   background-image: url('../assets/images/overwatchbackground.png');

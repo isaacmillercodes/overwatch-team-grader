@@ -11,7 +11,7 @@
   function HeroService($http) {
     /*jshint validthis: true */
     const baseUrl = 'https://overwatch-hero-api.herokuapp.com/api/v1/';
-    
+
     this.getAll = (resource) => {
       return $http.get(`${baseUrl}${resource}`);
     };
