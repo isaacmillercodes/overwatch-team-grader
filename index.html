@@ -6,6 +6,7 @@
     <!-- styles -->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/loading.css">
     <link rel='icon' href='./assets/images/overwatchlogo.png' type='image/png'>
 
     <!-- Twitter Card -->
@@ -30,6 +31,21 @@
   </head>
 
   <body ng-cloak ng-controller="heroController as heroCtrl">
+
+    <div class="loading-container">
+      <!-- <h1>Loading heroes...</h1> -->
+      <div class="loader">
+        <ul class="hexagon-container">
+          <li class="hexagon hex_1"></li>
+          <li class="hexagon hex_2"></li>
+          <li class="hexagon hex_3"></li>
+          <li class="hexagon hex_4"></li>
+          <li class="hexagon hex_5"></li>
+          <li class="hexagon hex_6"></li>
+          <li class="hexagon hex_7"></li>
+        </ul>
+      </div>
+    </div>
 
     <div class="container">
       <div class="row col-xs-12">
