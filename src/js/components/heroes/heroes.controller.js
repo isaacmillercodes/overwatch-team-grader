@@ -13,7 +13,9 @@
     const topRowHeroes = [];
     const middleRowHeroes = [];
     const bottomRowHeroes = [];
+    this.loaded = false;
     this.selectedHeroes = [];
+
     HeroService.getAll('heroes').then(heroList => {
       heroList.data.forEach(hero => {
         if (topRowHeroes.length < 8) {
@@ -27,6 +29,7 @@
       this.topHeroes = topRowHeroes;
       this.middleHeroes = middleRowHeroes;
       this.bottomHeroes = bottomRowHeroes;
+      this.loaded = true;
     });
 
     //helper functions
