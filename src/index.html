@@ -6,6 +6,7 @@
     <!-- styles -->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/loading.css">
     <link rel='icon' href='./assets/images/overwatchlogo.png' type='image/png'>
 
     <!-- Twitter Card -->
@@ -31,7 +32,22 @@
 
   <body ng-cloak ng-controller="heroController as heroCtrl">
 
-    <div class="container">
+    <div class="loading-container" ng-hide="heroCtrl.loaded">
+      <!-- <h1>Loading heroes...</h1> -->
+      <div class="loader">
+        <ul class="hexagon-container">
+          <li class="hexagon hex_1"></li>
+          <li class="hexagon hex_2"></li>
+          <li class="hexagon hex_3"></li>
+          <li class="hexagon hex_4"></li>
+          <li class="hexagon hex_5"></li>
+          <li class="hexagon hex_6"></li>
+          <li class="hexagon hex_7"></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container" ng-show="heroCtrl.loaded">
       <div class="row col-xs-12">
         <div ng-repeat="hero in heroCtrl.topHeroes" class="col-xs-1 hero-div" ng-click="heroCtrl.selectHero(hero)">
           <ow-hero hero="hero"></ow-hero>
@@ -49,7 +65,7 @@
       </div>
     </div>
 
-    <div class="container grade-message">
+    <div class="container grade-message" ng-show="heroCtrl.loaded">
       <h2 ng-if="heroCtrl.selectedHeroes.length < 6">Click on heroes above to add to your team!</h2>
       <button type="button" class="btn btn-md grade-btn" ng-click="heroCtrl.gradeTeam(heroCtrl.selectedHeroes)" ng-show="heroCtrl.selectedHeroes.length == 6" ng-if="!heroCtrl.gradedTeam">Grade Team</button>
       <h2 ng-show="heroCtrl.selectedHeroes.length == 6" ng-if="heroCtrl.gradedTeam" style="color: {{heroCtrl.messageColor}};">{{heroCtrl.gradeMessage}}</h2>
@@ -57,7 +73,7 @@
     </div>
 
     <div class="container">
-      <div class="row col xs-12 team-row">
+      <div class="row col xs-12 team-row" ng-show="heroCtrl.loaded">
         <div class="team-hero-1 col-xs-2" style="background-image: url({{heroCtrl.selectedHeroes[0].image}}); background-size: cover" ng-click="heroCtrl.removeHero(heroCtrl.selectedHeroes[0])">
         </div>
         <div class="team-hero-2 col-xs-2" style="background-image: url({{heroCtrl.selectedHeroes[1].image}}); background-size: cover" ng-click="heroCtrl.removeHero(heroCtrl.selectedHeroes[1])">
