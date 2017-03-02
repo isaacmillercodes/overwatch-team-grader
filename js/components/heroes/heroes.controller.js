@@ -57,10 +57,7 @@
       support.forEach(hero => {
         bottomRowHeroes.push(hero);
       });
-
-      console.log(topRowHeroes);
-      console.log(middleRowHeroes);
-      console.log(bottomRowHeroes);
+      
       this.topHeroes = topRowHeroes;
       this.middleHeroes = middleRowHeroes;
       this.bottomHeroes = bottomRowHeroes;
