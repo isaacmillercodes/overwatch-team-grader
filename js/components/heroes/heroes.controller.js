@@ -13,23 +13,59 @@
     const topRowHeroes = [];
     const middleRowHeroes = [];
     const bottomRowHeroes = [];
+    const offense = [];
+    const defense = [];
+    const tanks = [];
+    const support = [];
     this.loaded = false;
     this.selectedHeroes = [];
 
     HeroService.getAll('heroes').then(heroList => {
       heroList.data.forEach(hero => {
+
+        if (hero.role === 'Offense') {
+          offense.push(hero);
+        } else if (hero.role === 'Defense') {
+          defense.push(hero);
+        } else if (hero.role === 'Tank') {
+          tanks.push(hero);
+        } else {
+          support.push(hero);
+        }
+      });
+
+      offense.forEach(hero => {
+        topRowHeroes.push(hero);
+      });
+
+      defense.forEach(hero => {
         if (topRowHeroes.length < 8) {
           topRowHeroes.push(hero);
-        } else if (middleRowHeroes.length < 8) {
+        } else {
+          middleRowHeroes.push(hero);
+        }
+      });
+
+      tanks.forEach(hero => {
+        if (middleRowHeroes.length < 8) {
           middleRowHeroes.push(hero);
         } else {
           bottomRowHeroes.push(hero);
         }
       });
+
+      support.forEach(hero => {
+        bottomRowHeroes.push(hero);
+      });
+
+      console.log(topRowHeroes);
+      console.log(middleRowHeroes);
+      console.log(bottomRowHeroes);
       this.topHeroes = topRowHeroes;
       this.middleHeroes = middleRowHeroes;
       this.bottomHeroes = bottomRowHeroes;
       this.loaded = true;
+
     });
 
     //helper functions
