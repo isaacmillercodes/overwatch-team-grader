@@ -1,14 +1,16 @@
 (function() {
-
   'use strict';
 
   angular
-    .module('overwatchApp.components.heroes')
-    .controller('heroController', heroController);
+    .module('overwatchApp')
+    .component('owHero', {
+      controller: HeroController,
+      templateUrl: './js/components/heroes/partials/hero.view.html'
+    });
 
-  heroController.$inject = ['HeroService', '$scope'];
+  HeroController.inject = ['HeroService'];
 
-  function heroController(HeroService, $scope) {
+  function HeroController(HeroService) {
     /*jshint validthis: true */
     const topRowHeroes = [];
     const middleRowHeroes = [];
@@ -57,7 +59,7 @@
       support.forEach(hero => {
         bottomRowHeroes.push(hero);
       });
-      
+
       this.topHeroes = topRowHeroes;
       this.middleHeroes = middleRowHeroes;
       this.bottomHeroes = bottomRowHeroes;
@@ -168,4 +170,4 @@
 
   }
 
-})();
+}());
