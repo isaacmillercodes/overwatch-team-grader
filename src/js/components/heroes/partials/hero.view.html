@@ -1,7 +1,73 @@
-<div>
-  <img ng-src={{hero.image}} class="hero-image">
-  <p ng-if="hero.role == 'Offense'">{{hero.name}} <img ng-src="./assets/images/OffenseIcon.png" class="role-icon"></p>
-  <p ng-if="hero.role == 'Defense'">{{hero.name}} <img ng-src="./assets/images/DefenseIcon.png" class="role-icon"></p>
-  <p ng-if="hero.role == 'Tank'">{{hero.name}} <img ng-src="./assets/images/TankIcon.png" class="role-icon"></p>
-  <p ng-if="hero.role == 'Support'">{{hero.name}} <img ng-src="./assets/images/SupportIcon.png" class="role-icon"></p>
+<div class="loading-container" ng-hide="$ctrl.loaded">
+  <div class="loader">
+    <ul class="hexagon-container">
+      <li class="hexagon hex_1"></li>
+      <li class="hexagon hex_2"></li>
+      <li class="hexagon hex_3"></li>
+      <li class="hexagon hex_4"></li>
+      <li class="hexagon hex_5"></li>
+      <li class="hexagon hex_6"></li>
+      <li class="hexagon hex_7"></li>
+    </ul>
+  </div>
+</div>
+
+<div class="container" ng-show="$ctrl.loaded">
+  <div class="row col-xs-12">
+    <div ng-repeat="hero in $ctrl.topHeroes" class="col-xs-1 hero-div" ng-click="$ctrl.selectHero(hero)">
+      <div>
+        <img ng-src={{hero.image}} class="hero-image">
+        <p ng-if="hero.role == 'Offense'">{{hero.name}} <img ng-src="./assets/images/OffenseIcon.png" class="role-icon"></p>
+        <p ng-if="hero.role == 'Defense'">{{hero.name}} <img ng-src="./assets/images/DefenseIcon.png" class="role-icon"></p>
+        <p ng-if="hero.role == 'Tank'">{{hero.name}} <img ng-src="./assets/images/TankIcon.png" class="role-icon"></p>
+        <p ng-if="hero.role == 'Support'">{{hero.name}} <img ng-src="./assets/images/SupportIcon.png" class="role-icon"></p>
+      </div>
+    </div>
+  </div>
+  <div class="row col-xs-12">
+    <div ng-repeat="hero in $ctrl.middleHeroes" class="col-xs-1 hero-div" ng-click="$ctrl.selectHero(hero)">
+      <div>
+        <img ng-src={{hero.image}} class="hero-image">
+        <p ng-if="hero.role == 'Offense'">{{hero.name}} <img ng-src="./assets/images/OffenseIcon.png" class="role-icon"></p>
+        <p ng-if="hero.role == 'Defense'">{{hero.name}} <img ng-src="./assets/images/DefenseIcon.png" class="role-icon"></p>
+        <p ng-if="hero.role == 'Tank'">{{hero.name}} <img ng-src="./assets/images/TankIcon.png" class="role-icon"></p>
+        <p ng-if="hero.role == 'Support'">{{hero.name}} <img ng-src="./assets/images/SupportIcon.png" class="role-icon"></p>
+      </div>
+    </div>
+  </div>
+  <div class="row col-xs-12 bottom-row">
+    <div ng-repeat="hero in $ctrl.bottomHeroes" class="col-xs-1 hero-div" ng-click="$ctrl.selectHero(hero)">
+      <div>
+        <img ng-src={{hero.image}} class="hero-image">
+        <p ng-if="hero.role == 'Offense'">{{hero.name}} <img ng-src="./assets/images/OffenseIcon.png" class="role-icon"></p>
+        <p ng-if="hero.role == 'Defense'">{{hero.name}} <img ng-src="./assets/images/DefenseIcon.png" class="role-icon"></p>
+        <p ng-if="hero.role == 'Tank'">{{hero.name}} <img ng-src="./assets/images/TankIcon.png" class="role-icon"></p>
+        <p ng-if="hero.role == 'Support'">{{hero.name}} <img ng-src="./assets/images/SupportIcon.png" class="role-icon"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container grade-message" ng-show="$ctrl.loaded">
+  <h2 ng-if="$ctrl.selectedHeroes.length < 6">Click on heroes above to add to your team!</h2>
+  <button type="button" class="btn btn-md grade-btn" ng-click="$ctrl.gradeTeam($ctrl.selectedHeroes)" ng-show="$ctrl.selectedHeroes.length == 6" ng-if="!$ctrl.gradedTeam">Grade Team</button>
+  <h2 ng-show="$ctrl.selectedHeroes.length == 6" ng-if="$ctrl.gradedTeam" style="color: {{$ctrl.messageColor}};">{{$ctrl.gradeMessage}}</h2>
+
+</div>
+
+<div class="container">
+  <div class="row col xs-12 team-row" ng-show="$ctrl.loaded">
+    <div class="team-hero-1 col-xs-2" style="background-image: url({{$ctrl.selectedHeroes[0].image}}); background-size: cover" ng-click="$ctrl.removeHero($ctrl.selectedHeroes[0])">
+    </div>
+    <div class="team-hero-2 col-xs-2" style="background-image: url({{$ctrl.selectedHeroes[1].image}}); background-size: cover" ng-click="$ctrl.removeHero($ctrl.selectedHeroes[1])">
+    </div>
+    <div class="team-hero-3 col-xs-2" style="background-image: url({{$ctrl.selectedHeroes[2].image}}); background-size: cover" ng-click="$ctrl.removeHero($ctrl.selectedHeroes[2])">
+    </div>
+    <div class="team-hero-4 col-xs-2" style="background-image: url({{$ctrl.selectedHeroes[3].image}}); background-size: cover" ng-click="$ctrl.removeHero($ctrl.selectedHeroes[3])">
+    </div>
+    <div class="team-hero-5 col-xs-2" style="background-image: url({{$ctrl.selectedHeroes[4].image}}); background-size: cover" ng-click="$ctrl.removeHero($ctrl.selectedHeroes[4])">
+    </div>
+    <div class="team-hero-6 col-xs-2" style="background-image: url({{$ctrl.selectedHeroes[5].image}}); background-size: cover" ng-click="$ctrl.removeHero($ctrl.selectedHeroes[5])">
+    </div>
+  </div>
 </div>

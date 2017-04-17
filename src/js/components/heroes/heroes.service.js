@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('overwatchApp.components.heroes')
+    .module('overwatchApp')
     .service('HeroService', HeroService);
 
   HeroService.$inject = ['$http'];
