@@ -23,7 +23,6 @@
     this.selectedHeroes = [];
 
     HeroService.getAll('heroes').then(heroList => {
-      console.log('inside then of get all');
       heroList.data.forEach(hero => {
 
         if (hero.role === 'Offense') {
